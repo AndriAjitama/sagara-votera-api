@@ -1,0 +1,113 @@
+{
+  "kind": "collectionType",
+  "collectionName": "candidates",
+  "info": {
+    "singularName": "candidate",
+    "pluralName": "candidates",
+    "displayName": "Candidate",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sequence": {
+      "type": "integer"
+    },
+    "fullname": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "desc": {
+      "type": "text"
+    },
+    "born": {
+      "type": "string"
+    },
+    "dateofbirth": {
+      "type": "date"
+    },
+    "lasteducation": {
+      "type": "text"
+    },
+    "lastjob": {
+      "type": "text"
+    },
+    "visi": {
+      "type": "text"
+    },
+    "misi": {
+      "type": "text"
+    },
+    "partyone": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "partytwo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "partythree": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "partyfour": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "mappedBy": "candidates"
+    },
+    "titleparty": {
+      "type": "string"
+    },
+    "vote": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::vote.vote",
+      "inversedBy": "candidates"
+    }
+  }
+}
